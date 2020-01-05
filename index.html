@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="styles/estilotabla.css">
+		<link rel="stylesheet" type="text/css" href="styles/estiloreloj.css">
+		<link rel="stylesheet" type="text/css" href="styles/estilocuerpo.css">
+		
+        <script src="scripts/cuerpo.js"></script>
+		<script src="scripts/reloj.js"></script> 
+		<script src="scripts/p5.js"></script>
+		<script src="scripts/processing.js"></script>
+		<script src="scripts/media.js"></script>
+		<script src="scripts/fondo.js"></script>
+		<script>
+			function verano(){
+			document.body.style.backgroundImage= "url('images/summer.jpg')";
+				}
+			function otono(){
+			document.body.style.backgroundImage= "url('images/autumn.jpg')";
+				}
+			function invierno(){
+			document.body.style.backgroundImage= "url('images/winter.jpg')";
+				}
+			function primavera(){
+			document.body.style.backgroundImage= "url('images/spring.jpg')";
+				}
+		</script>
+		<script>		
+			var diahorario = new Date();
+			var dias = diahorario.getDays();
+			function asignaturas(){
+				if( dias=0 ){
+				document.getElementById('toca').innerHTML = "Hoy es lunes y toca TIC, Ingles, Fisica, Historia, Dibujo, Matematicas";
+				}
+				if( dias=1 ){
+				document.getElementById('toca').innerHTML = "Hoy es martes y toca T.Industrial, Historia, Lengua, Ingles, Dibujo, Matematicas";
+				}
+				if( dias=2 ){
+				document.getElementById('toca').innerHTML = "Hoy es miercoles y toca T.Industrial, Historia, Dibujo, Lengua, Fisica, Matematicas";
+				}
+				if( dias=3 ){
+				document.getElementById('toca').innerHTML = "Hoy es jueves y toca T.Industrial, Dibujo, TIC, Lengua, Historia, Fisica";
+				}
+				if( dias=4 ){
+				document.getElementById('toca').innerHTML = "Hoy es viernes y toca T.Industrial, TIC, Fisica, Lengua, Matematicas, Ingles";
+				}
+				if( dias=5 ){
+				document.getElementById('toca').innerHTML = "Hoy es sábado. ¡Descansa!";
+				}
+				if( dias=6 ){
+				document.getElementById('toca').innerHTML = "Hoy es domingo. ¡Descansa!";
+				}
+			}
+		</script>
+		
+		
+	</head>
+	<body onload=hora()>
+		<div class="estaciones">
+				<button id="fondoinvierno" onclick="invierno()">Invierno</button>
+				<button id="fondoprimavera" onclick="primavera()">Primavera</button>
+				<button id="fondoverano" onclick="verano()">Verano</button>
+				<button id="fondootono" onclick="otono()">Otoño</button>
+		</div>
+		<div class="notas">
+				<form >
+				Matemáticas:<br>
+					<input type="text" id="t1">
+				<br>
+				Lengua:<br>
+					<input type="text" id="t2">
+				<br>
+				T.industrial:<br>
+					<input type="text" id="t3">
+				<br>
+				TIC:<br>
+					<input type="text" id="t4">
+				<br>
+				Dibujo:<br>
+					<input type="text" id="t5">
+				<br>
+				Inglés:<br>
+					<input type="text" id="t6">
+				<br>
+				Física:<br>
+					<input type="text" id="t7">
+				<br>
+				Historia:<br>
+					<input type="text" id="t8">
+				<br><br>
+					<input type="button" value="Calcular" onclick="Calcular();">
+				</form> 
+				<p id="promedio"></p>
+		</div>
+		<div class="reloj" id="contenedor_reloj">	
+				<h1 id="contenedor_titulo"></h1>
+				<button id="contenedor_hora" onclick="hora()">Actualizar hora</button>
+				<br>
+				<button id="fechames" onclick="fecha()">Ver fecha completa</button>
+		</div>
+		<div>
+			<button id="toca" onclick="asignaturas()">¿Qué toca hoy?</button>
+		</div>
+		<div class="horario">
+				<table border="1">
+					<tr>
+							<td class="importante" id="hora0"><strong>HORA</strong></td>
+							<td class="dia" id="lunes0"><strong>Lunes</strong></td>
+							<td class="dia" id="martes0"><strong>Martes</strong></td>
+							<td class="dia" id="miercoles0"><strong>Miércoles</strong></td>
+							<td class="dia" id="jueves0"><strong>Jueves</strong></td>
+							<td class="dia" id="viernes0"><strong>Viernes</strong></td>					
+					<tr>
+							<td class="hora" id="hora1"><strong>1º</strong></td>
+							<td class="TIC" id="lunes1">TIC</td>
+							<td class="TecInd" id="martes1">TecInd</td>
+							<td class="TecInd" id="miercoles1">TecInd</td>
+							<td class="TecInd" id="jueves1">TecInd</td>
+							<td class="TecInd" id="viernes1">TecInd</td>						
+					<tr>
+							<td class="hora" id="hora2"><strong>2º</strong></td>
+							<td class="Ingles" id="lunes2">Inglés</td>
+							<td class="Historia" id="martes2">Historia</td>
+							<td class="Historia" id="miercoles2">Historia</td>
+							<td class="Dibujo" id="jueves2">Dibujo</td>
+							<td class="TIC" id="viernes2">TIC</td>						
+					<tr>
+							<td class="hora" id="hora3"><strong>3º</strong></td>
+							<td class="Fisica" id="lunes3">Física</td>
+							<td class="Lengua" id="martes3">Lengua</td>
+							<td class="Dibujo" id="miercoles3">Dibujo</td>
+							<td class="TIC" id="jueves3">TIC</td>
+							<td class="Fisica" id="viernes3">Física</td>							
+					<tr>
+							<td class="hora" id="hora4"><strong>4º</strong></td>
+							<td class="Historia" id="lunes4">Historia</td>
+							<td class="Ingles" id="martes4">Inglés</td>
+							<td class="Lengua" id="miercoles4">Lengua</td>
+							<td class="Lengua" id="jueves4">Lengua</td>
+							<td class="Lengua" id="viernes4">Lengua</td>						
+					<tr>
+							<td class="hora" id="hora5"><strong>5º</strong></td>
+							<td class="Dibujo" id="lunes5">Dibujo</td>
+							<td class="Dibujo" id="martes5">Dibujo</td>
+							<td class="Fisica" id="miercoles5">Física</td>
+							<td class="Historia" id="jueves5">Historia</td>
+							<td class="Mates" id="viernes5">Mates</td>						
+					<tr>
+							<td class="hora" id="hora6"><strong>6º</strong></td>
+							<td class="Mates" id="lunes6">Mates</td>
+							<td class="Mates" id="martes6">Mates</td>
+							<td class="Mates" id="miercoles6">Mates</td>
+							<td class="Fisica" id="jueves6">Física</td>
+							<td class="Ingles" id="viernes6">Inglés</td>
+					</table>
+			</div>
+			<br>
+			<div>
+				<button id="diferenciahora" onclick="diferencia()"> Horas de clase restantes</button>
+			</div>
+			<div id="c_efba4a484e3ea1fe7a85391daf8fb935" class="tiempo"></div>
+			<script type="text/javascript" src="https://www.eltiempo.es/widget/widget_loader/efba4a484e3ea1fe7a85391daf8fb935"></script>
+			<br>		
+	</body>
+</html>

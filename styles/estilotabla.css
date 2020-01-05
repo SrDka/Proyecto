@@ -1,0 +1,33 @@
+td.importante {
+	background-color: rgb(225,225,225);
+}
+td.hora {
+	background-color: rgb(225,225,255);
+}
+td.dia {
+	background-color: rgb(225,225,225);
+}
+td.Lengua {
+	background-color: rgb(100,100,200);
+}
+td.Mates {
+	background-color: rgb(225,50,30);
+}
+td.Ingles {
+	background-color: rgb(225,150,100);
+}
+td.Fisica {
+	background-color: rgb(100,225,100);
+}
+td.Dibujo {
+	background-color: rgb(180,180,180);
+}
+td.TIC {
+	background-color: rgb(225,150,225);
+}
+td.TecInd {
+	background-color: rgb(225,200,100);
+}
+td.Historia {
+	background-color: rgb(30,150,225);
+}
